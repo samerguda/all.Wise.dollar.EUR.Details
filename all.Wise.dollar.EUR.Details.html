@@ -111,12 +111,39 @@
     </tr>
 </table>
 
-<img src="a.png" width="300px" height="400px" alt="">
-<img src="b.png" width="300px" height="400px"  alt="">
+<h2>Alinma Account Details</h2>
+
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Details</th>
+        <th>Actions</th>
+    </tr>
+    <tr>
+        <td>Customer Name</td>
+        <td class="content" id="currentCustomerName">Samer Godh Elsaadny</td>
+        <td><button onclick="copyToClipboard(document.getElementById('currentCustomerName').innerText)">Copy</button></td>
+    </tr>
+    <tr>
+        <td>Account Number</td>
+        <td class="content" id="currentAccountNumber">68202293099000</td>
+        <td><button onclick="copyToClipboard(document.getElementById('currentAccountNumber').innerText)">Copy</button></td>
+    </tr>
+    <tr>
+        <td>IBAN</td>
+        <td class="content" id="currentIBAN">SA3905000068202293099000</td>
+        <td><button onclick="copyToClipboard(document.getElementById('currentIBAN').innerText)">Copy</button></td>
+    </tr>
+</table>
+
 <button onclick="copyAll()">Copy All</button>
 <button onclick="printTable()">Print</button>
 
+
+
+<img src="a.png" width="300px" height="400px" alt="">
+<img src="b.png" width="300px" height="400px"  alt="">
+<img src="c.png" width="300px" height="400px"  alt="">
 </body>
 </html>
-
 
