@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Details</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            padding: 5px 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Copied to clipboard: " + text);
+            });
+        }
+
+        function copyAll() {
+            let content = "";
+            const rows = document.querySelectorAll("td.content");
+            rows.forEach(row => {
+                content += row.innerText + "\n";
+            });
+            copyToClipboard(content.trim());
+        }
+
+        function printTable() {
+            window.print();
+        }
+    </script>
+</head>
+<body>
+
+<h2>USD Account Details</h2>
+
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Details</th>
+        <th>Actions</th>
+    </tr>
+    <tr>
+        <td>Account Holder</td>
+        <td class="content" id="usdAccountHolder">Samer Alsaadni</td>
+        <td><button onclick="copyToClipboard(document.getElementById('usdAccountHolder').innerText)">Copy</button></td>
+    </tr>
+    <tr>
+        <td>ACH and Wire Routing Number</td>
+        <td class="content" id="usdRoutingNumber">026073150</td>
+        <td><button onclick="copyToClipboard(document.getElementById('usdRoutingNumber').innerText)">Copy</button></td>
+    </tr>
+    <tr>
+        <td>Account Number</td>
+        <td class="content" id="usdAccountNumber">8314035692</td>
+        <td><button onclick="copyToClipboard(document.getElementById('usdAccountNumber').innerText)">Copy</button></td>
+    </tr>
+    <tr>
+        <td>Account Type</td>
+        <td class="content" id="usdAccountType">Checking</td>
+        <td><button onclick="copyToClipboard(document.getElementById('usdAccountType').innerText)">Copy</button></td>
+    </tr>
+    <tr>
+        <td>Bank Name and Address</td>
+        <td class="content" id="usdBankAddress">Community Federal Savings Bank, 89-16 Jamaica Ave, Woodhaven NY 11421, United States</td>
+        <td><button onclick="copyToClipboard(document.getElementById('usdBankAddress').innerText)">Copy</button></td>
+    </tr>
+</table>
+
+<h2>EUR Account Details</h2>
+
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Details</th>
+        <th>Actions</th>
+    </tr>
+    <tr>
+        <td>Account Holder</td>
+        <td class="content" id="eurAccountHolder">Samer Alsaadni</td>
+        <td><button onclick="copyToClipboard(document.getElementById('eurAccountHolder').innerText)">Copy</button></td>
+    </tr>
+    <tr>
+        <td>BIC</td>
+        <td class="content" id="eurBIC">TRWIBEB1XXX</td>
+        <td><button onclick="copyToClipboard(document.getElementById('eurBIC').innerText)">Copy</button></td>
+    </tr>
+    <tr>
+        <td>IBAN</td>
+        <td class="content" id="eurIBAN">BE43 9678 5897 7301</td>
+        <td><button onclick="copyToClipboard(document.getElementById('eurIBAN').innerText)">Copy</button></td>
+    </tr>
+    <tr>
+        <td>Wise’s Address</td>
+        <td class="content" id="eurWiseAddress">Rue du Trône 100, 3rd floor, Brussels 1050, Belgium</td>
+        <td><button onclick="copyToClipboard(document.getElementById('eurWiseAddress').innerText)">Copy</button></td>
+    </tr>
+</table>
+
+<img src="a.png" width="300px" height="400px" alt="">
+<img src="b.png" width="300px" height="400px"  alt="">
+<button onclick="copyAll()">Copy All</button>
+<button onclick="printTable()">Print</button>
+
+</body>
+</html>
+
+
